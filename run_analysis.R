@@ -1,13 +1,13 @@
 library(dplyr)
 
 #read in data, classifying them as integers for subject #'s and activity #'s, numeric for the measurements and character for the column headers
-ytrain <- read.table("./projectdata/UCI HAR Dataset/train/y_train.txt", stringsAsFactors = FALSE, colClasses = "integer") #activity type by number, training data for each observation
-xtrain <- read.table("./projectdata/UCI HAR Dataset/train/x_train.txt", stringsAsFactors = FALSE, colClasses = "numeric") #measurements, training data
-subjecttrain <- read.table("./projectdata/UCI HAR Dataset/train/subject_train.txt", stringsAsFactors = FALSE, colClasses = "integer") #subject number for each observation, training data
-features <- read.table("./projectdata/UCI HAR Dataset/features.txt", stringsAsFactors = FALSE, colClasses = "character") #column headers
-ytest <- read.table("./projectdata/UCI HAR Dataset/test/y_test.txt", stringsAsFactors = FALSE, colClasses = "integer") #activity type, test data
-xtest <- read.table("./projectdata/UCI HAR Dataset/test/X_test.txt", stringsAsFactors = FALSE, colClasses = "numeric") #measurements, test data
-subjecttest <- read.table("./projectdata/UCI HAR Dataset/test/subject_test.txt", stringsAsFactors = FALSE, colClasses = "integer") #subject number for each observation, test data
+ytrain <- read.table("y_train.txt", stringsAsFactors = FALSE, colClasses = "integer") #activity type by number, training data for each observation
+xtrain <- read.table("x_train.txt", stringsAsFactors = FALSE, colClasses = "numeric") #measurements, training data
+subjecttrain <- read.table("subject_train.txt", stringsAsFactors = FALSE, colClasses = "integer") #subject number for each observation, training data
+features <- read.table("features.txt", stringsAsFactors = FALSE, colClasses = "character") #column headers
+ytest <- read.table("y_test.txt", stringsAsFactors = FALSE, colClasses = "integer") #activity type, test data
+xtest <- read.table("X_test.txt", stringsAsFactors = FALSE, colClasses = "numeric") #measurements, test data
+subjecttest <- read.table("subject_test.txt", stringsAsFactors = FALSE, colClasses = "integer") #subject number for each observation, test data
 
 #1.Merges the training and the test sets to create one data set
 #bind the training columns together, starting with subject, activity # (ytrain) and then the data
@@ -32,7 +32,7 @@ stdmeanDt <- dt[,c(1,2,stdmeancol)] #creates a new dt to select only those colum
 
 #3. Uses descriptive activity names to name the activities in the data set
 #read in activity labels
-activityDt <- read.table("./projectdata/UCI HAR Dataset/activity_labels.txt")
+activityDt <- read.table("activity_labels.txt")
 colnames(activityDt) <- c("Number", "ActivityName")
 
 #merge activityDt and stdmeanDt based on the number label of the activity (the column "Number" in activityDt and "Activity" in stdmeanDt)
