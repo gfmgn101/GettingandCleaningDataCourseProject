@@ -42,7 +42,7 @@ Per the assignment, run_analysis.R merges the training and data sets together an
   * write to a separate file called finalDt.txt, which can be accessed using the following script
   
 ```
-data <- read.table("finalDt.txt, header = TRUE) 
+data <- read.table("finalDt.txt", header = TRUE) 
 View(data)
 ```
 
