@@ -52,7 +52,8 @@ colnames(mergeDt) <- gsub("BodyBody","Body",colnames(mergeDt)) #remove the extra
 
 finDt <- mergeDt %>%
       group_by(Subject, ActivityName) %>%
-      summarize_all(mean, na.rm = TRUE)
+      summarize_all(mean, na.rm = TRUE) %>%
+      arrange(Subject, ActivityName)
 
 #write table to separate file
 write.table(finDt, file = "finalDt.txt")
