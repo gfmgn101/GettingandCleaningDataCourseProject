@@ -47,7 +47,7 @@ View(data)
 ```
 
 
-## Why the resulting is tidy
+## Why the resulting data table is tidy
 The final dataset was created with tidy data principles from [Hadley Wickham](http://vita.had.co.nz/papers/tidy-data.pdf) and from the [thoughtfulbloke](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/).
 
 Wickham:
