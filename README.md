@@ -39,9 +39,15 @@ Per the assignment, run_analysis.R merges the training and data sets together an
   * eliminate duplicate of BodyBody typos in original column headers
 * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
   * using dplyr functions, grouped the data by activity and subject, summarized over each group by mean, and then arranged by subject and activity name
-  * write to a separate file called finalDt.txt
+  * write to a separate file called finalDt.txt, which can be accessed using the following script
+  
+```
+data <- read.table("finalDt.txt, header = TRUE) 
+View(data)
+```
 
-### Why the resulting is tidy
+
+## Why the resulting is tidy
 The final dataset was created with tidy data principles from [Hadley Wickham](http://vita.had.co.nz/papers/tidy-data.pdf) and from the [thoughtfulbloke](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/).
 
 Wickham:
@@ -50,7 +56,7 @@ Wickham:
 3. Each type of observational unit forms a table
 
 Thoughtfulbloke:
-1. Does it have headings so I know which columns are which.
+1. Does it have headings so readers know which columns are which.
 2. Are the variables in different columns (depending on the wide/long form)
 3. Are there no duplicate columns
 
